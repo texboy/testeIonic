@@ -1,0 +1,47 @@
+page-login {
+
+  .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+    border-bottom-color: #dedede;
+    -webkit-box-shadow: none;
+    box-shadow: none
+  }
+
+  .splash-bg {
+    position: relative;
+    background: url('../assets/img/login.jpg') no-repeat transparent;
+    background-size: cover;
+    height: 45%;
+    z-index: 1;
+    background-repeat: repeat-x;
+
+  }
+
+  .splash-info {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+
+  .btn {
+    background-color: orange;
+    transition: 300ms;
+  }
+  .btn:hover{
+    background-color: black !important;
+
+  }
+  .esqueceu-senha{
+    margin-top: 1em;
+    text-decoration: none;
+    color: grey;
+    display: block;
+    text-align: center;
+  }
+  .novo-membro{
+    margin-top: 1em;
+    text-decoration: none;
+    color: #6fb7f7;
+    display: block;
+    text-align: center;
+  }
+}

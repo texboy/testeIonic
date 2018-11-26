@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color ="primary">
+
+    <ion-title>
+      Home
+    </ion-title>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name ="menu"></ion-icon>
+    </button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides paginationClickable=true
+              initialSlide=0
+              loop=true
+              autoplay=0
+              speed=2000
+              pager = true
+              #mySlider>
+
+    <ion-slide *ngFor="let item of slides">
+
+      <img src="{{item.img}}">
+      <div class ="txtSlide">
+        <p class = "txtTitulo" >{{item.titulo}}</p>
+        <p class = "txtTexto" >{{item.texto}}</p>
+      </div>
+    </ion-slide>
+  </ion-slides>
+  <button class="swiper-button-next btn-next" ion-button (click)="slideNext()">Próximo</button>
+
+</ion-content>

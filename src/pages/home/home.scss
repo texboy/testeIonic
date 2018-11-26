@@ -1,0 +1,36 @@
+page-home {
+
+  .btn-next{
+    background-image: none !important;
+    top: auto !important;
+    width: auto;
+    bottom: 8% !important;
+  }
+  .swiper-pagination{
+    text-align: left !important;
+    bottom: 10% !important;
+    margin-left: 10px;
+  }
+  .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet{
+    margin-bottom: 10px !important;
+    margin-right: 5px !important;
+  }
+  .swiper-pagination-bullet-active{
+    background: orange;
+  }
+  ion-slide.swiper-slide {
+    align-items: flex-start;
+  }
+  .txtTitulo{
+    text-align: left;
+    font-weight: bold;
+  }
+  .txtTexto{
+    text-align: left;
+    font-size: 1em;
+    color: grey;
+  }
+  .txtSlide{
+    margin-left: 10px;
+  }
+}
