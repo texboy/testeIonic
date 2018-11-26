@@ -9,24 +9,45 @@ import { Settings } from '../providers';
 
 @Component({
   template: `<ion-menu [content]="content">
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Pages</ion-title>
-      </ion-toolbar>
-    </ion-header>
+
 
     <ion-content>
-      <ion-list>
+      <div class ="user">
+        <img class = "user-login" src ="../assets/img/user.png">
+        <div class="content-user">
+          <span class="user-name">Thomas Johnson</span>
+          <span class="user-plano">Plano Básico</span>
+        </div>
+      </div>
+      <ion-list no-lines class ="toolbar-app">
 
-        <button menuClose ion-item (click)="openPage('HomePage')">
-          <ion-icon color="primary" name =  "home"></ion-icon>
-          Home
-        </button>
+        <div class ="toolbar-link">
+          <button class ="toolbar-button" menuClose ion-item (click)="openPage('HomePage')">
+          <div class="toolbar-item">
+            <ion-icon color="primary" name =  "home"></ion-icon>
+            Home
+            </div>
+          </button>
+        </div>
 
-        <button menuClose ion-item (click)="openPage('TutorialPage')">
-          <ion-icon color="primary" name =  "help-circle"></ion-icon>
-          Tutorial
-        </button>
+        <div class="toolbar-link">
+          <button class ="toolbar-button" menuClose ion-item (click)="openPage('TutorialPage')">
+            <div class="toolbar-item">
+              <ion-icon color="primary" name =  "help-circle"></ion-icon>
+              Tutorial
+            </div>
+          </button>
+        </div>
+
+        <div class="bg-logoff">
+          <button class ="btn-logoff" menuClose ion-item (click)="openPage('LoginPage')">
+            <div>
+              <ion-icon style ="color: white;" name =  "exit"></ion-icon>
+              Sair
+            </div>
+          </button>
+        </div>
+
       </ion-list>
     </ion-content>
 

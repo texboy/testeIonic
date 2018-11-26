@@ -14,3 +14,66 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+.toolbar-item{
+  color: orange;
+  padding: 10px;
+  font-size: 20px;
+}
+
+
+.toolbar-button:hover{
+  border-left: 6px solid orange !important;
+  background-color: rgba($color: rgb(255, 255, 255), $alpha: 0.2)
+}
+
+.bg-logoff{
+ position: fixed !important;
+ bottom: 0px !important;
+ width: 100%;
+ padding: 0px;
+}
+
+.btn-logoff{
+  display: inline;
+  color: white;
+  background-color: lightcoral;
+  margin: 0px;
+  border-radius: 0%;
+  font-size: 20px;
+}
+
+.list-md{
+  height: 100%;
+}
+
+.user-login{
+  display: inline-block;
+  margin: 16px;
+  height: 80px;
+  width: 80px;
+}
+.user{
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user{
+  span{
+    display: block;
+  }
+  .content-user{
+    width: 100%;
+  }
+}
+
+.user-name{
+  color:orange;
+  font-weight: bold;
+  padding-bottom: 4px;
+}
+.user-plano{
+  color: grey;
+}
+
