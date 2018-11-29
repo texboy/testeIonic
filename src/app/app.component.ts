@@ -31,10 +31,10 @@ import { Settings } from '../providers';
         </div>
 
         <div class="toolbar-link">
-          <button class ="toolbar-button" menuClose ion-item (click)="openPage('TutorialPage')">
+          <button class ="toolbar-button" menuClose ion-item (click)="openPage('OffersPage')">
             <div class="toolbar-item">
-              <ion-icon color="primary" name =  "help-circle"></ion-icon>
-              Tutorial
+              <ion-icon color="primary" name =  "paper"></ion-icon>
+              Ofertas
             </div>
           </button>
         </div>
