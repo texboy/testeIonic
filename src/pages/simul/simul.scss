@@ -1,0 +1,39 @@
+page-simul {
+
+  .txt-titulo{
+    color: orange;
+    text-align: center;
+    font-size: 2em;
+    font-weight: 400;
+    display: block;
+    margin-top: 1.5em;
+  }
+  .txt-conteudo{
+    color: orange;
+    font-size: 1.8em;
+    font-weight: 400;
+  }
+  .txt-final{
+    text-align: center;
+    display: block;
+    color: grey;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 10px;
+  }
+  .conteudo{
+    text-align: center;
+    margin: 10px;
+  }
+  .valor-conta{
+    border: 1px solid grey;
+    width: 50%;
+  }
+  .controles{
+    padding: 1em;
+    padding-left:2em;
+    button{
+      font-weight: bold;
+    }
+  }
+}

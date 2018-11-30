@@ -25,7 +25,7 @@ import { Settings } from '../providers';
           <button class ="toolbar-button" menuClose ion-item (click)="openPage('HomePage')">
           <div class="toolbar-item">
             <ion-icon color="primary" name =  "home"></ion-icon>
-            Home
+            HOME
             </div>
           </button>
         </div>
@@ -34,10 +34,20 @@ import { Settings } from '../providers';
           <button class ="toolbar-button" menuClose ion-item (click)="openPage('OffersPage')">
             <div class="toolbar-item">
               <ion-icon color="primary" name =  "paper"></ion-icon>
-              Ofertas
+              OFERTAS
             </div>
           </button>
         </div>
+
+        <div class="toolbar-link">
+          <button class ="toolbar-button" menuClose ion-item (click)="openPage('SimulPage')">
+            <div class="toolbar-item">
+              <ion-icon color="primary" name =  "sunny"></ion-icon>
+              SIMULADOR
+            </div>
+          </button>
+        </div>
+
 
         <div class="bg-logoff">
           <button class ="btn-logoff" menuClose ion-item (click)="openPage('LoginPage')">

@@ -7,6 +7,10 @@ page-offers {
   padding: 1em;
   background-color: white;
   margin: 5px 0px  ;
+  transition-duration: 300ms;
+ }
+ .oferta:hover{
+   background-color: lightgrey;
  }
  .titulo-oferta{
   font-weight: bold;

@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color ="primary">
+
+    <ion-title>
+      Simulador
+    </ion-title>
+
+    <button ion-button icon-only menuToggle>
+      <ion-icon name ="menu"></ion-icon>
+    </button>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+
+  <span class ="txt-titulo"> Quanto você paga de <br> energia por mês? </span>
+
+  <div class = "conteudo">
+
+    <ion-list no-lines>
+      <ion-item>
+      <ion-label class= "txt-conteudo">R$</ion-label>
+      <ion-input  type="numeric" name="valor-conta" class="valor-conta"></ion-input>
+      </ion-item>
+    </ion-list>
+
+  </div>
+
+  <div class="controles">
+
+    <button ion-button block>Calcular</button>
+
+  </div>
+  <span class ="txt-final">Todas as informações necessárias <br> estão contidas na sua conta de luz</span>
+
+</ion-content>
