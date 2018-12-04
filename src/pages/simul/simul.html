@@ -13,16 +13,16 @@
 </ion-header>
 
 <ion-content padding>
-
+  <form>
 
   <span class ="txt-titulo"> Quanto você paga de <br> energia por mês? </span>
 
   <div class = "conteudo">
 
     <ion-list no-lines>
-      <ion-item>
+      <ion-item no-lines>
       <ion-label class= "txt-conteudo">R$</ion-label>
-      <ion-input  type="numeric" name="valor-conta" class="valor-conta"></ion-input>
+      <ion-input  type="text" name="valor-conta" class="valor-conta" [brmasker]="{money:true}" #valorConta ></ion-input>
       </ion-item>
     </ion-list>
 
@@ -30,9 +30,10 @@
 
   <div class="controles">
 
-    <button ion-button block>Calcular</button>
+    <button ion-button block (click)="calc(valorConta.value)">Calcular</button>
 
   </div>
+  </form>
   <span class ="txt-final">Todas as informações necessárias <br> estão contidas na sua conta de luz</span>
 
 </ion-content>

@@ -1,6 +1,8 @@
+
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { SimulPage } from './simul';
+import { BrMaskerModule} from 'brmasker-ionic-3';
 
 @NgModule({
   declarations: [
@@ -8,6 +10,7 @@ import { SimulPage } from './simul';
   ],
   imports: [
     IonicPageModule.forChild(SimulPage),
+    BrMaskerModule,
   ],
 })
 export class SimulPageModule {}
