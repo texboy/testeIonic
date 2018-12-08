@@ -34,7 +34,7 @@ export class ResultPage {
   valorEconomizado;
   valorContaEnergiaDepois;
   contaEnergia25 = 0;
-  contaEnergiaSolar = 0;
+  contaEnergia25Solar = 0;
   economiaTotal;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public nav: Nav) {
@@ -44,6 +44,25 @@ export class ResultPage {
     console.log(this.ptcSistema);
     console.log(this.areaAplicacao);
     console.log(this.engMensalEstimada);
+    console.log(this.valorMinimoSistema);
+    console.log(this.percEconomizado);
+    console.log(this.valorEconomizado);
+    console.log(this.valorContaEnergiaDepois);
+    console.log(this.contaEnergia25);
+    console.log(this.contaEnergia25Solar);
+    console.log(this.economiaTotal);
+
+    this.valorConta = this.formatMoney(this.valorConta,'R$ ');
+
+    this.valorContaEnergiaDepois = this.formatMoney(this.valorContaEnergiaDepois,'R$ ');
+    this.valorEconomizado = this.formatMoney(this.valorEconomizado,'R$ ');
+
+    this.contaEnergia25 = this.formatMoney(this.contaEnergia25,'R$ ');
+    this.contaEnergia25Solar = this.formatMoney(this.contaEnergia25Solar,'R$ ');
+    this.economiaTotal = this.formatMoney(this.economiaTotal,'R$ ');
+
+
+
 
   }
 
@@ -63,6 +82,11 @@ export class ResultPage {
     this.calcPotencia();
     this.calcAreaAp();
     this.calcEnergiaMensal();
+    this.calcValorMinSis();
+    this.calcPercEconomizado();
+    this.calcValEconomizado();
+    this.calcValorContaDepois();
+    this.calcEnergia25();
   }
 
   calcModulo(){
@@ -89,5 +113,74 @@ export class ResultPage {
   calcEnergiaMensal(){
     this.engMensalEstimada = this.ptcSistema * 30 * this.hspCorrigido;
   }
+  calcValorMinSis(){
+    this.valorMinimoSistema= this.ptcSistema *
+    ( 7.392 + 12.99 * Math.exp(-0.7655 * this.ptcSistema) ) * 1000 ;
+  }
+  calcPercEconomizado(){
+    this.percEconomizado = this.engMensalEstimada * this.tarifaImpostos / this.valorConta * 100;
+  }
+  calcValEconomizado(){
+    this.valorEconomizado =  this.engMensalEstimada * this.tarifaImpostos;
+  }
+  calcValorContaDepois(){
+    if((this.valorConta - this.valorEconomizado) < this.tarifaImpostos * this.taxaDisponibilidade){
+
+
+      this.valorContaEnergiaDepois = this.valorConta - this.valorEconomizado;
+      this.valorContaEnergiaDepois = Math.round(this.valorContaEnergiaDepois*100)/100;
+
+    }else{
+
+      this.valorContaEnergiaDepois = this.tarifaImpostos * this.taxaDisponibilidade;
+
+    }
+  }
+
+  calcEnergia25(){
+
+    /**Conta antes */
+    let valoresAntes = [];
+    let i = 0;
+    valoresAntes[0] = this.valorConta;
+
+    for(i = 1;i < 25; i++){
+      valoresAntes[i] = valoresAntes[i-1] * (1+(this.inflacaoEnergetica / 100));
+    }
+
+
+    /**Conta depois */
+
+    let valoresDepois = [];
+    valoresDepois[0] = this.valorContaEnergiaDepois;
+
+    for(i = 1;i < 25; i++){
+      valoresDepois[i] = valoresDepois[i-1] * (1+(this.inflacaoEnergetica / 100));
+    }
+
+    /* Conta de Energia em 25 anos */
+
+    for(i=0;i<25;i++){
+      this.contaEnergia25 += valoresAntes[i] * 12;
+    }
+
+     /* Conta de Energia com Energia Solar */
+     for(i=0;i<25;i++){
+      this.contaEnergia25Solar += valoresDepois[i] * 12;
+    }
+
+    this.economiaTotal = this.contaEnergia25 - this.contaEnergia25Solar;
+
+    console.log(this.contaEnergia25);
+
+
+  }
+
+  formatMoney(n, currency) {
+    return currency + n.toFixed(2).replace(/./g, function(c, i, a) {
+      return i > 0 && c !== "." && (a.length - i) % 3 === 0 ? "," + c : c;
+    });
+  }
+
 
 }

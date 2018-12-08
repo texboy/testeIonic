@@ -19,12 +19,12 @@ export class HomePage {
 
   slides =  [
              {
-               "img": "assets/img/login.jpg?t=-950866085quality=60&h=800",
+               "img": "assets/img/home.png?t=-950866085quality=60&h=800",
                "titulo": "Simule o quanto irá economizar!",
                "texto": "Teste",
                },
                {
-                "img": "assets/img/login.jpg?t=-950866085quality=60&h=800",
+                "img": "assets/img/home.png?t=-950866085quality=60&h=800",
                 "titulo": "Teste",
                 "texto": "Teste",
                 },
